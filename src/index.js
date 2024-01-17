@@ -96,4 +96,8 @@ axios.get(apiUrl).then(refreshWeather);}
   let form = document.querySelector("#city-form");
   form.addEventListener("submit", showNewCityInfo);
   
-
+  // Load default weather information for Lisbon on page load
+  function defaultCityFunction(){
+  cityUpdate("Lisbon");
+      }
+  window.addEventListener("load", defaultCityFunction );
