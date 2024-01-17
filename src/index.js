@@ -53,6 +53,17 @@ function displayDescription(description) {
     descriptionElement.innerHTML = `${description}`;
 }
 
+function displayIcon(iconUrl, altText) {
+    let iconElement = document.querySelector(".current-temperature-icon");
+    // Create an img element
+    let imgElement = document.createElement("img");
+    imgElement.src = iconUrl;
+    imgElement.alt = altText;
+    // Clear existing content and append the img element
+    iconElement.innerHTML = '';  
+    iconElement.appendChild(imgElement);
+}
+
 function refreshWeather(response) {
     console.log(response);
     let data = response.data;
@@ -63,6 +74,7 @@ function refreshWeather(response) {
         displayHumidity(data.temperature.humidity);
         displayWindSpeed(data.wind.speed);
         displayDescription(data.condition.description);
+        displayIcon(data.condition.icon_url, data.condition.icon);
     }
 }
 
@@ -84,4 +96,4 @@ axios.get(apiUrl).then(refreshWeather);}
   let form = document.querySelector("#city-form");
   form.addEventListener("submit", showNewCityInfo);
   
- 
+
