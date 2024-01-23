@@ -40,6 +40,30 @@ p {
     margin-inline-end: 0px;
 }
 
+ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+  }
+  
+  ul li {
+    list-style-type: none;
+    align-items: center;
+    text-align: center;
+  }
+  
+  ul li:hover {
+    background-color: #effbfe;
+    border-radius: 10px;
+  }
+  
+  .current-details strong,
+  .max-temperature,
+  .min-temperature {
+    color: red;
+    padding: 5px 10px;
+  }
+  
 .current-city {
     font-size: 38px;
     font-weight: 900;
@@ -117,3 +141,18 @@ p {
     border-radius: 10px;
     box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
 }
+
+.forecast-weather{
+margin-top: 20px;   
+ text-align: center;
+}
+
+.forecast-day {
+    font-size: 16px;
+    color: #5b8998;
+    padding: 8px;
+  }
+  
+.forecast-min-max-temp {
+    padding: 5px;
+  }
