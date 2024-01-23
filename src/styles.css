@@ -30,7 +30,7 @@ img {
 
 main {
     display: block;
-    padding: 3rem 0;
+    padding: 36px 0;
 }
 
 p {
@@ -135,7 +135,7 @@ p {
 .forecast-weather .column {
     display: inline-block;
     margin: 5px;
-    padding: 15px 2px;
+    padding: 5px 2px;
     border: 1px solid rgba(136, 201, 222, 0.3);
     border-radius: 8px;
     text-align: center;
@@ -159,8 +159,9 @@ p {
 }
 
 .forecast-emoji {
-    width: 50%; /* Adjust width as needed */
-    text-align: center;
+    width: 15%;
+    text-align: center;    
+    
 }
 
 .current-details strong,
