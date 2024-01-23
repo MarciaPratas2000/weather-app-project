@@ -101,3 +101,30 @@ axios.get(apiUrl).then(refreshWeather);}
   cityUpdate("Lisbon");
       }
   window.addEventListener("load", defaultCityFunction );
+
+
+  function displayForecast() {
+    let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+    let forecastHtml = "";
+  
+    days.forEach(function (day) {
+      forecastHtml =
+        forecastHtml +
+        `
+        <div class="column">
+          <div class="forecast-day" >${day} </div>
+          <div class="forecast-emoji" >☀️</div>
+          <div class="forecast-min-max-temp">
+          <span class="max-temperature"><strong>15ºC</strong></span>
+          <span class="min-temperature">9ºC</span>
+          </div>
+          </div>
+      `;
+    });
+
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = forecastHtml;
+  }
+  
+
+  displayForecast();
