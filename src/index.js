@@ -75,6 +75,7 @@ function refreshWeather(response) {
         displayWindSpeed(data.wind.speed);
         displayDescription(data.condition.description);
         displayIcon(data.condition.icon_url, data.condition.icon);
+        getForecast(data.city);
     }
 }
 
@@ -102,8 +103,15 @@ axios.get(apiUrl).then(refreshWeather);}
       }
   window.addEventListener("load", defaultCityFunction );
 
+   // Update the  FORECAST API URL with the newCityname
+ function getForecast(city){
+  let apiKey = "ec0ft3ef184fa26o40bf0860bad82dc8";
+  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+ // Make the API call
+ axios.get(apiUrlForecast).then(displayForecast);}
 
-  function displayForecast() {
+  function displayForecast(response) {
+    console.log(response.data);
     let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
     let forecastHtml = "";
   
@@ -127,4 +135,3 @@ axios.get(apiUrl).then(refreshWeather);}
   }
   
 
-  displayForecast();
